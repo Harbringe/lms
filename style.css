@@ -162,11 +162,11 @@ aside .sidebar hr {
     margin-right: 5vw;
     
 }
-.webpage-container{
+/* .webpage-container{
     background-color: blue;
     height: 100%;
     width: 55.6%;
-}
+} */
 .preview-container{
     height: 100%;
     width: 25.3%;
@@ -258,4 +258,164 @@ aside .sidebar hr {
     margin-left: 1.4vw;
     margin-right: 5vw;
     background-color: #734942;   
+}
+
+
+.webpage-container{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 55.6%;
+    
+}
+.search-box{
+    padding-top: 4%;
+    padding-left: 3%;
+    width: 40%;
+
+}
+.search-bar{
+    width: 100%;
+    max-width: 450px;
+    height: 40px;
+    background-color:lightgray;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    padding: 5px 20px;
+}
+.search-bar input{
+    background-color:transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: gray;
+    
+}
+::placeholder{
+    color: #677483;
+    font-size: 15px;
+}
+.search-bar button span{
+    width: 15px;
+    height: 25px;
+}
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    
+}
+
+.block1{
+
+    margin-top: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.block1 h1{
+    margin-bottom: 20px;
+}
+.block1 h2{
+    
+    color: gray;
+}
+.block1 button{
+    width: 170px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: rgb(234, 124, 66);
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow,transform;
+    transition-property: box-shadow,transform;
+}
+.block1 button h2{
+    font-size: 18px;
+    color: white;
+
+}
+.block1 button:hover{
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+.block2{
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+}
+.book {
+    display: flex;
+    background: #f5f5f5;
+    width: 90%;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.block2 .book :hover{
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+.book-image-placeholder {
+    width: 40%;
+    height: 100%;
+    background: #ccc;
+    margin-right: 10px;
+    border-radius: 5px 0 0 5px; 
+}
+
+.book-details {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.book-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.book-author {
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.book-rating {
+    font-size: 2rem;
+}
+
+.star {
+    color: gold; 
+
+}
+
+.block3{
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
