@@ -58,7 +58,6 @@ body {
 
 aside{
     height: 100vh;
-    background: white;
     width: 15vw;
     display: flex;
     flex-direction: column;
@@ -66,7 +65,6 @@ aside{
 }
 
 aside .notifications{
-    background: white;
     margin-bottom: -7vh;
     margin-left: 4vh;
     margin-top: 5vh;
@@ -87,7 +85,6 @@ aside .notifications a:hover span{
 }
 
 aside .top{
-    background: white;
     display: flex;
     margin: 3vh;
     margin-bottom: 0px;
@@ -167,21 +164,21 @@ aside .sidebar hr {
 
 .webpage .header{
     display: flex;
-    background: white;
     width: 100%;
     height: 11vh;
     padding-top: 3vh;
+    margin-bottom: -3vh;
 }
 
 .webpage .header h1 {
-    font-size: 2.6rem;
+    font-size: 2.3rem;
     font-family: 'Averia Serif Libre', serif;
     font-weight: 800;
     align-self: center; 
 }
 
 .webpage .header span{
-    font-size: 2.6rem;
+    font-size: 2.3rem;
     align-self: center;
     margin: 1rem;
     color: var(--color-gray);
@@ -191,15 +188,16 @@ aside .sidebar hr {
 
 .webpage .category-selector{
     width: 100%;
-    height: 20vh;
+    height: 25vh;
+    overflow: hidden; 
     display: flex;
-    justify-content: space-around;
-    background: white;
+    position: relative;
+    /* justify-content: space-around; */
 }
 
 .webpage .category-selector button{
-    height: 7vh;
-    width: 4.7vw;
+    height: 6.5vh;
+    width: 4.3vw;
     margin: auto;
     padding: auto;
     align-items: center;
@@ -217,43 +215,68 @@ aside .sidebar hr {
 }
 
 .webpage .category-selector .category-cards{
-    background-color: white;
-    width: 70%;
-    height: 80%;
+    padding-top: 2rem;
+    width: 60vw;
+    height: 90%;
     margin-top: auto;
     margin-bottom: auto;
-    display: flex;
-    overflow: hidden;
-    justify-content: space-around;
+    margin-right: 10px;
+    scrollbar-width: none;
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    grid-auto-columns: 15%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth;
+}
+.category-cards::-webkit-scrollbar{
+    display: none;
 }
 
-.webpage .category-selector .card{
+/* .snaps-inline{
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 24px;
+}
+
+.snaps-inline > * {
+    scroll-snap-align: start;
+} */
+
+.webpage .category-selector button.card{
     background-color: var(--color-white);
-    width: 117px;
-    height: 160px;
+    width: 100px;
+    height: 133.33px;
     border-radius: 20%;
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 300ms ease-in-out;
 }
 
-.webpage .category-selector .category-cards .card .category-logo{
+.webpage .category-selector button.card:hover{
+    width: 110px;
+    height: 140px;
+    box-shadow: 0 0 10px var(--color-blue-bright);
+}
+
+.webpage .category-selector .category-cards button.card .category-logo{
     width: 100%;
     height: 52%;
     display: flex;
     justify-content: center;
     align-items: center;   
 }
-.webpage .category-selector .category-cards .card .category-logo span{
-    font-size: 4rem;
+.webpage .category-selector .category-cards button.card .category-logo span{
+    font-size: 3rem;
     color: var(--color-darker-gray);
     font-variation-settings: "FILL" 1;   
     
 }
 
-.webpage .category-selector .category-cards .card .category-name{
+.webpage .category-selector .category-cards button.card .category-name{
     /* background-color: green;  */
     width: 100%;
     height: 28%;
@@ -261,13 +284,13 @@ aside .sidebar hr {
     justify-content: center;
     align-items: center;  
 }
-.webpage .category-selector .category-cards .card .category-name {
+.webpage .category-selector .category-cards button.card .category-name {
     font-family: 'Poppins', sans-serif;
     color: var(--color-brown-dark);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }   
 
-.webpage .category-selector .category-cards .card .category-count{
+.webpage .category-selector .category-cards button.card .category-count{
     /* background-color: yellow; */
     width: 100%;
     height: 20%;
@@ -276,9 +299,33 @@ aside .sidebar hr {
     align-items: center;
     padding-bottom: 25px;  
 }
-.webpage .category-selector .category-cards .card .category-count{
+.webpage .category-selector .category-cards button.card .category-count{
     font-family: 'Poppins', sans-serif;
     color: var(--color-darker-gray);
-    font-size: 
-    1rem;
+    font-size: 0.8rem;
 }
+
+.books{
+    height: 45%;
+    width: 100%;
+}
+
+.books .header {
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Averia Serif Libre', 'Poppins', serif, sans-serif;
+    height: 10%;
+    width: 100%;
+    padding: 2rem;
+    color: var(--color-darker-gray);
+    font-size: 0.9rem;
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+}
+
+.books .header h1{
+    color: var(--color-brown-dark);
+    margin-bottom: 1.25vh;  
+}
+
+
