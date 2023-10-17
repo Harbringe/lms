@@ -48,7 +48,7 @@ html{
 body {
     width: 100vw;
     height: 100vh;
-    font-family: poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.88rem;
     background: white;
     user-select: none;
@@ -217,7 +217,7 @@ aside .sidebar hr {
 }
 
 .webpage .category-selector .category-cards{
-    background-color: #3366FF;
+    background-color: white;
     width: 70%;
     height: 80%;
     margin-top: auto;
@@ -229,9 +229,56 @@ aside .sidebar hr {
 
 .webpage .category-selector .card{
     background-color: var(--color-white);
-    width: 6vw;
-    height: 16vh;
+    width: 117px;
+    height: 160px;
     border-radius: 20%;
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.webpage .category-selector .category-cards .card .category-logo{
+    width: 100%;
+    height: 52%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.webpage .category-selector .category-cards .card .category-logo span{
+    font-size: 4rem;
+    color: var(--color-darker-gray);
+    font-variation-settings: "FILL" 1;   
+    
+}
+
+.webpage .category-selector .category-cards .card .category-name{
+    /* background-color: green;  */
+    width: 100%;
+    height: 28%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.webpage .category-selector .category-cards .card .category-name {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-brown-dark);
+    font-size: 1.3rem;
+}   
+
+.webpage .category-selector .category-cards .card .category-count{
+    /* background-color: yellow; */
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;  
+}
+.webpage .category-selector .category-cards .card .category-count{
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-darker-gray);
+    font-size: 
+    1rem;
 }
