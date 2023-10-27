@@ -8,8 +8,11 @@ var categories = [
     { icon: 'database', name: 'Database', count: '6,256 Books' },
     { icon: 'database', name: 'Database', count: '6,256 Books' },
     { icon: 'database', name: 'Database', count: '6,256 Books' },
+    { icon: 'database', name: 'Database', count: '6,256 Books' },
+    { icon: 'database', name: 'Database', count: '6,256 Books' },
+    { icon: 'database', name: 'Database', count: '6,256 Books' },
+    { icon: 'database', name: 'Database', count: '6,256 Books' },
     { icon: 'database', name: 'Database', count: '6,256 Books' }
-
 ];
 
 // Function to create category cards dynamically
@@ -33,7 +36,7 @@ function createCategoryCards() {
         var categoryCount = document.createElement('div');
         categoryCount.className = 'category-count';
         categoryCount.innerHTML = '<span>' + category.count + '</span>';
-        
+
         categoryCard.appendChild(categoryLogo);
         categoryCard.appendChild(categoryNameElement);
         categoryCard.appendChild(categoryCount);
@@ -44,5 +47,70 @@ function createCategoryCards() {
     categoryContainer.appendChild(categoryCardsContainer);
 }
 
-// Call the function to create category cards
-createCategoryCards();
+// Function to create the "Books" section dynamically for a specific category
+function createBooksSection(category) {
+    var booksContainer = document.querySelector('.books');
+    
+    var bookDiv = document.createElement('div');
+    bookDiv.className = 'book';
+
+    var header = document.createElement('div');
+    header.className = 'header';
+
+    var textDiv = document.createElement('div');
+    textDiv.className = 'text';
+
+    var categoryTitle = document.createElement('h1');
+    categoryTitle.textContent = category.name;
+
+    var bookCountElement = document.createElement('span');
+    bookCountElement.textContent = `(${category.count})`;
+
+    var buttons = document.createElement('div');
+    buttons.className = 'buttons';
+
+    var expandButton = document.createElement('button');
+    expandButton.className = 'expand';
+    expandButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 2rem;">' + 'equal' + '</span';
+
+    var leftButton = document.createElement('button');
+    leftButton.id = category.name;
+    leftButton.className = 'left';
+    leftButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 2rem;">' + 'navigate_before' + '</span>';
+
+    var rightButton = document.createElement('button');
+    rightButton.id = category.name;
+    rightButton.className = 'right';
+    rightButton.innerHTML = '<span class="material-symbols-rounded" style="font-size: 2rem;">' + 'navigate_next' + '</span>';
+
+    textDiv.appendChild(categoryTitle);
+    textDiv.appendChild(bookCountElement);
+
+    buttons.appendChild(expandButton);
+    buttons.appendChild(leftButton);
+    buttons.appendChild(rightButton);
+
+    header.appendChild(textDiv);
+    header.appendChild(buttons);
+
+    bookDiv.appendChild(header);
+
+    var bodyDiv = document.createElement('div');
+    bodyDiv.className = 'body';
+
+    // Add content to the body if needed
+
+    bookDiv.appendChild(bodyDiv);
+
+    booksContainer.appendChild(bookDiv);
+}
+
+document.fonts.ready.then(function () {
+    // Call the function to create category cards
+    createCategoryCards();
+    
+    // Call the function to create the "Books" section dynamically for each category in the array
+    categories.forEach(function (category) {
+        createBooksSection(category);
+    });
+});
