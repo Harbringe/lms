@@ -1,0 +1,33 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="test",
+    password="root",
+    database="test",
+    auth_plugin='mysql_native_password'
+)
+
+cursor = mydb.cursor()
+
+cursor.execute("SELECT * FROM test")
+
+print(cursor.fetchall())
+
+id = int(input("Enter ID: "))
+name = input("Enter name: ")
+
+insert_query = "INSERT INTO test(id, name) VALUES (%s, %s)"
+values = (id, name)
+
+cursor.execute(insert_query, values)
+
+cursor.execute("SELECT * FROM test")
+newly_inserted_data = cursor.fetchall()
+
+cursor.execute(insert_query, values)
+
+print(newly_inserted_data)
+
+cursor.close()
+mydb.close()

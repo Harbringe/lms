@@ -161,6 +161,7 @@ aside .sidebar hr {
     margin-left: 15vw;
     height: 100%;
     width: 85%;
+    /* overflow-x: hidden; */
 }
 
 .webpage .header{
@@ -310,11 +311,11 @@ aside .sidebar hr {
     height: 45%;
     width: 100%;
 }
-.books .book{
-    height: 100%;
+.books .book-cat{
+    height: 80%;
     width: 100%;
 }
-.book .header {
+.book-cat .header {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Push buttons to the right end */
@@ -326,7 +327,7 @@ aside .sidebar hr {
     font-family: 'Averia Serif Libre', 'Poppins', serif, sans-serif;
 }
 
-.book .header .text{
+.book-cat .header .text{
     display: flex;
     align-items: center;
     height: 10%;
@@ -337,51 +338,90 @@ aside .sidebar hr {
     gap: 0.7rem;
 }
 
-.book .header h1 {
+.book-cat .header .text h1 {
     color: var(--color-brown-dark);
+    font-size: 2.5rem;
 }
 
-.book .header .text span{
+.book-cat .header .text span{
     font-family: 'Averia Serif Libre', 'Poppins', serif, sans-serif;
     color: var(--color-darker-gray);
     font-size: 0.9rem;
     gap: 1rem;
     display: flex;
+    margin-left: 2px;
 } 
 
-.book .header h1{
+.book-cat .header h1{
     color: var(--color-brown-dark);
     margin-bottom: 0.8vh;  
 }
 
 
-.book .header button {
-    height: 40px;
-    width: 50px;
+.book-cat .header button {
+    height: 50px;
+    width: 60px;
     padding: auto;
     align-items: center;
     background-color: var(--color-white);
     border-radius: 20%;
     transition: all 300ms ease-in-out;
+    margin-left: 0.7rem;
 }
 
-.book .header .expand {
+.book-cat .header .expand {
     width: 40px;
 }
 
-.book .header .expand span {
+.book-cat .header .expand span {
     font-variation-settings: 'wght' 200;
 }
 
-.book .header button span {
+.book-cat .header button span {
     margin: auto;
     color: var(--color-brown-dark);
     align-self: center;
 }
 
 
-.book .body{
+.book-cat .body{
     height: 33vh;
     width: 100%;
-    
+    display: flex;
+}
+
+.book-cat .body .book:first-child{
+    margin: 3rem;
+    margin-left: 4rem;
+}
+
+.book-cat .body .book{
+    margin: 3rem;
+    margin-left: 0.2rem;
+    width: 160px;
+    height: 220px;
+}
+
+.book-cat .body .book img{
+    border-radius: 10%;
+}
+
+.book-cat .body .book h2{
+    font-family: 'Averia Serif Libre', serif;
+    overflow-x: hidden;
+    color: var(--color-brown-dark);
+    font-size: 1.5rem;
+    max-height: 2.5em;
+    overflow: hidden;
+    white-space: pre-wrap; /* Allow text to wrap to a new line */
+    text-overflow: ellipsis; /* Add ellipsis for text overflow */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Maximum number of lines */
+    -webkit-box-orient: vertical;
+}
+
+.book-cat .body .book span{
+    color: var(--color-darker-gray);
+    font-weight: 500;
+    font-size: 1.05rem;
 }
